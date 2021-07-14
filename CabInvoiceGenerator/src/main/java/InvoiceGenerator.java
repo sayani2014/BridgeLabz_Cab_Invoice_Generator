@@ -1,13 +1,10 @@
 public class InvoiceGenerator {
-    /**
-     * Given : MINIMUM_COST_PER_KM = 10.0
-     *         COST_PER_TIME = 1
-     *         MINIMUM_FARE = 5
-     */
 
-    private static double MINIMUM_COST_PER_KM = 10.0;
-    private static int COST_PER_TIME = 1;
-    private static double MINIMUM_FARE = 5;
+    private static final int NORMALRIDE = 1;
+    private static final int PREMIUMRIDE = 2;
+    private static double MINIMUM_COST_PER_KM = 0.0;
+    private static int COST_PER_TIME = 0;
+    private static double MINIMUM_FARE = 0;
 
     /**
      * Purpose : Given distance and time,
@@ -20,9 +17,29 @@ public class InvoiceGenerator {
      * @return
      */
 
-    public double calculateFare(double distance, int time) {
-        double totalFare = distance * MINIMUM_COST_PER_KM + time * COST_PER_TIME;
+    public double calculateFare(double distance, int time, int option) {
 
+        /**
+         * Given Values For Normal Ride
+         */
+
+        if(option == NORMALRIDE) {
+            MINIMUM_COST_PER_KM = 10.0;
+            COST_PER_TIME = 1;
+            MINIMUM_FARE = 5;
+        }
+
+        /**
+         * Given Values For Premium Ride
+         */
+
+        else if(option == PREMIUMRIDE) {
+            MINIMUM_COST_PER_KM = 15.0;
+            COST_PER_TIME = 2;
+            MINIMUM_FARE = 20;
+        }
+
+        double totalFare = distance * MINIMUM_COST_PER_KM + time * COST_PER_TIME;
         return Math.max(totalFare, MINIMUM_FARE);
     }
 
@@ -34,10 +51,10 @@ public class InvoiceGenerator {
      * @return
      */
 
-    public double calculateTotalFare(Ride[] rides) {
+    public double calculateTotalFare(Ride[] rides, int option) {
         double totalFare = 0.0;
         for(Ride ride : rides) {
-            totalFare += this.calculateFare(ride.distance, ride.time);
+            totalFare += this.calculateFare(ride.distance, ride.time, option);
         }
         return totalFare;
     }
@@ -51,10 +68,10 @@ public class InvoiceGenerator {
      * @return
      */
 
-    public InvoiceSummary calculateFareSummary(Ride[] rides) {
+    public InvoiceSummary calculateFareSummary(Ride[] rides, int option) {
         double totalFare = 0.0;
         for(Ride ride : rides) {
-            totalFare += this.calculateFare(ride.distance, ride.time);
+            totalFare += this.calculateFare(ride.distance, ride.time, option);
         }
         return new InvoiceSummary(rides.length, totalFare);
     }

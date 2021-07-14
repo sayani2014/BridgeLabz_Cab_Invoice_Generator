@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="InvoiceServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-14T04:57:14" hostname="DESKTOP-N66BMGP" time="0.01">
+<testsuite name="InvoiceServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-14T07:46:06" hostname="DESKTOP-N66BMGP" time="0.015">
   <properties/>
-  <testcase name="givenLessDistanceAndTime_ShouldReturnMinimumFare" classname="InvoiceServiceTest" time="0.004"/>
-  <testcase name="givenMultipleRides_ShouldReturnTotalFare" classname="InvoiceServiceTest" time="0.002"/>
-  <testcase name="givenUserID_ShouldReturnInvoiceSummary" classname="InvoiceServiceTest" time="0.002"/>
-  <testcase name="givenDistanceAndTime_ShouldReturnTotalFare" classname="InvoiceServiceTest" time="0.0"/>
+  <testcase name="givenLessDistanceAndTime_ShouldReturnMinimumFare" classname="InvoiceServiceTest" time="0.002"/>
+  <testcase name="givenMultipleRides_ShouldReturnTotalFare" classname="InvoiceServiceTest" time="0.003"/>
+  <testcase name="givenUserID_ShouldReturnInvoiceSummary" classname="InvoiceServiceTest" time="0.004"/>
+  <testcase name="givenDistanceAndTime_ShouldReturnTotalFare" classname="InvoiceServiceTest" time="0.001"/>
   <testcase name="givenMultipleRides_ShouldReturnInvoiceSummary" classname="InvoiceServiceTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
