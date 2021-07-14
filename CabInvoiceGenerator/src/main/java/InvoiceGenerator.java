@@ -25,4 +25,20 @@ public class InvoiceGenerator {
 
         return Math.max(totalFare, MINIMUM_FARE);
     }
+
+    /**
+     * Purpose : Given distance and time for multiple rides,
+     *           Return aggregate total fare for all the journey
+     *
+     * @param rides
+     * @return
+     */
+
+    public double calculateTotalFare(Ride[] rides) {
+        double totalFare = 0.0;
+        for(Ride ride : rides) {
+            totalFare += this.calculateFare(ride.distance, ride.time);
+        }
+        return totalFare;
+    }
 }
