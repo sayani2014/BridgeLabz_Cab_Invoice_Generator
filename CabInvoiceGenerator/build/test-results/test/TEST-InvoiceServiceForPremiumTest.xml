@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="InvoiceServiceForPremiumTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-13T07:48:41" hostname="DESKTOP-N66BMGP" time="0.003">
-  <properties/>
-  <testcase name="givenUserID_ShouldReturnInvoiceSummary" classname="InvoiceServiceForPremiumTest" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
