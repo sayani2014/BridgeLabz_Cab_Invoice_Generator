@@ -41,4 +41,21 @@ public class InvoiceGenerator {
         }
         return totalFare;
     }
+
+    /**
+     * Purpose : Given distance and time for multiple rides,
+     *           Calculate aggregate total fare for all the journey
+     *           Calculate the average fare per ride taking total number of rides and total fare as input
+     *
+     * @param rides
+     * @return
+     */
+
+    public InvoiceSummary calculateFareSummary(Ride[] rides) {
+        double totalFare = 0.0;
+        for(Ride ride : rides) {
+            totalFare += this.calculateFare(ride.distance, ride.time);
+        }
+        return new InvoiceSummary(rides.length, totalFare);
+    }
 }
